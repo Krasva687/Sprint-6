@@ -3,12 +3,8 @@ package ru.sber.services
 import org.springframework.beans.factory.BeanNameAware
 import org.springframework.beans.factory.DisposableBean
 import org.springframework.beans.factory.InitializingBean
-import org.springframework.beans.factory.config.BeanPostProcessor
-import org.springframework.context.annotation.Configuration
 import org.springframework.stereotype.Component
-import ru.sber.services.processors.MyBeanPostProcessor
 import javax.annotation.PostConstruct
-import javax.annotation.PreDestroy
 
 @Component
 class CallbackBean : InitializingBean, DisposableBean, BeanNameAware {
