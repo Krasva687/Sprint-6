@@ -5,9 +5,10 @@ import org.springframework.beans.factory.DisposableBean
 import org.springframework.beans.factory.InitializingBean
 import org.springframework.stereotype.Component
 import javax.annotation.PostConstruct
+import javax.annotation.PreDestroy
 
 @Component
-class CallbackBean : InitializingBean, DisposableBean, BeanNameAware {
+class CallbackBean : InitializingBean, DisposableBean {
 
     var greeting: String? = "What's happening?"
 
@@ -19,9 +20,6 @@ class CallbackBean : InitializingBean, DisposableBean, BeanNameAware {
         greeting = "Sorry, but I really have to go."
     }
 
-    override fun setBeanName(p0: String) {
-
-    }
 }
 @Component
 class CombinedBean : InitializingBean{
