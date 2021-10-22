@@ -15,7 +15,6 @@ class CallbackBean : InitializingBean, DisposableBean {
     override fun afterPropertiesSet() {
     }
 
-    @PostConstruct
     override fun destroy() {
         greeting = "Sorry, but I really have to go."
     }
