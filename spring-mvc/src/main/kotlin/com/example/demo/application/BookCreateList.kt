@@ -1,16 +1,15 @@
-package com.example.demo
+package com.example.demo.application
 
 import java.util.concurrent.ConcurrentHashMap
 
 class BookCreateList(
     private val bookList: ConcurrentHashMap<Int, DataBook>
 ){
+    fun addBook(dataBook: DataBook){
+        bookList.put(bookList.size, dataBook)
+    }
+    fun updateBook(bookListNewOrSame: DataBook, index: Int): DataBook?{
 
-    fun addOrUpdateBook(bookListNewOrSame: DataBook, index: Int = bookList.size): DataBook?{
-        if(index == bookList.size){
-            bookList.put(bookList.size, bookListNewOrSame)
-            return bookList[bookList.size - 1]
-        }
         if(bookListNewOrSame.firstName.isNotEmpty()){
                 bookList[index]!!.firstName = bookListNewOrSame.firstName
         }
