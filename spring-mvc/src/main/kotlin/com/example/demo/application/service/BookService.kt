@@ -13,17 +13,17 @@ class BookService {
         bookList.addBook(dataBook)
     }
 
-    fun updateBook(dataBook: DataBook, index: Int): DataBook? {
-        return bookList.updateBook(dataBook, index)
+    fun updateBook(dataBook: DataBook, id: Int): DataBook? {
+        return bookList.updateBook(dataBook, id)
     }
     fun getListBooks(): ConcurrentHashMap<Int, DataBook> =  bookList.getListBooks()
 
-    fun removeBook(index: Int){
-        bookList.removeBook(index)
+    fun removeBook(id: Int){
+        bookList.removeBook(id)
     }
 
-    fun getBook(index: Int): DataBook {
-        return bookList.getBook(index)!!
+    fun getBook(id: Int): DataBook {
+        return bookList.getBook(id)!!
     }
 
 }

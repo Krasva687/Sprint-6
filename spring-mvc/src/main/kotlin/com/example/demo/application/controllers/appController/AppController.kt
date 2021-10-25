@@ -26,16 +26,16 @@ class AppController {
     }
 
 
-    @GetMapping("/{index}/remove")
-    fun deleteNote(@PathVariable index: Int, model: Model): String {
-        bookService.removeBook(index)
+    @GetMapping("/{id}/remove")
+    fun deleteNote(@PathVariable id: Int, model: Model): String {
+        bookService.removeBook(id)
         model.addAttribute("res", "Контакт удален")
         return "response"
     }
 
-    @GetMapping("/{index}/get")
-    fun getBook(@PathVariable index: Int, model: Model): String {
-        val view = bookService.getBook(index)
+    @GetMapping("/{id}/get")
+    fun getBook(@PathVariable id: Int, model: Model): String {
+        val view = bookService.getBook(id)
         model.addAttribute("res", view)
         return "contactBook"
     }
@@ -48,14 +48,14 @@ class AppController {
         model.addAttribute("list", "Вот что нашлось:")
         return "allContact"
     }
-    @GetMapping("/{index}/update")
-    fun updateFormContact(@PathVariable index: Int): String{
+    @GetMapping("/{id}/update")
+    fun updateFormContact(@PathVariable id: Int): String{
         return "updateBook"
     }
 
-    @PostMapping("/{index}/update")
-    fun updateContact(@PathVariable index: Int, @ModelAttribute dataBook: DataBook, model: Model):String {
-        bookService.updateBook(dataBook, index)
+    @PostMapping("/{id}/update")
+    fun updateContact(@PathVariable id: Int, @ModelAttribute dataBook: DataBook, model: Model):String {
+        bookService.updateBook(dataBook, id)
         model.addAttribute("res","Контакт изменен")
         return "response"
     }

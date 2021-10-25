@@ -9,24 +9,24 @@ class BookCreateList(
     fun addBook(dataBook: DataBook){
         bookList.put(bookList.size, dataBook)
     }
-    fun updateBook(bookListNewOrSame: DataBook, index: Int): DataBook?{
+    fun updateBook(bookListNewOrSame: DataBook, id: Int): DataBook?{
 
         if(bookListNewOrSame.firstName.isNotEmpty()){
-                bookList[index]!!.firstName = bookListNewOrSame.firstName
+                bookList[id]!!.firstName = bookListNewOrSame.firstName
         }
         if(bookListNewOrSame.lastName.isNotEmpty()){
-            bookList[index]!!.lastName = bookListNewOrSame.lastName
+            bookList[id]!!.lastName = bookListNewOrSame.lastName
         }
         if(bookListNewOrSame.email.isNotEmpty()){
-            bookList[index]!!.email = bookListNewOrSame.email
+            bookList[id]!!.email = bookListNewOrSame.email
         }
         if(bookListNewOrSame.phone.isNotEmpty()){
-            bookList[index]!!.phone = bookListNewOrSame.phone
+            bookList[id]!!.phone = bookListNewOrSame.phone
         }
         if(bookListNewOrSame.address.isNotEmpty()) {
-            bookList[index]!!.address = bookListNewOrSame.address
+            bookList[id]!!.address = bookListNewOrSame.address
         }
-        return bookList[index]
+        return bookList[id]
     }
 
     fun getListBooks(): ConcurrentHashMap<Int, DataBook>{
@@ -36,12 +36,12 @@ class BookCreateList(
         return bookList
     }
 
-    fun removeBook(index: Int){
-        bookList.remove(index)
+    fun removeBook(id: Int){
+        bookList.remove(id)
     }
 
-    fun getBook(index: Int): DataBook? {
-        return bookList[index]
+    fun getBook(id: Int): DataBook? {
+        return bookList[id]
     }
 
 
