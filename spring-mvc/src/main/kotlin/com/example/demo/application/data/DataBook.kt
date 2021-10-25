@@ -1,4 +1,4 @@
-package com.example.demo.application
+package com.example.demo.application.data
 
 data class DataBook (
     var firstName: String,
