@@ -9,18 +9,18 @@ import java.util.concurrent.ConcurrentHashMap
 class BookService {
     private val bookList = BookCreateList(ConcurrentHashMap())
 
-    fun addBook(dataBook: DataBook){
-        bookList.addBook(dataBook)
-    }
+    fun addBook(dataBook: DataBook) = bookList.addBook(dataBook)
+
 
     fun updateBook(dataBook: DataBook, id: Int): DataBook? {
         return bookList.updateBook(dataBook, id)
     }
-    fun getListBooks(): ConcurrentHashMap<Int, DataBook> =  bookList.getListBooks()
+    fun getListBooks(list: Map<String, String>): ConcurrentHashMap<Int, DataBook> =  bookList.getListBooks()
 
-    fun removeBook(id: Int){
-        bookList.removeBook(id)
+    fun removeBook(id: Int): DataBook?{
+        return bookList.removeBook(id)
     }
+
 
     fun getBook(id: Int): DataBook {
         return bookList.getBook(id)!!

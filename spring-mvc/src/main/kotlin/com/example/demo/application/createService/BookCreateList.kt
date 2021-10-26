@@ -36,8 +36,8 @@ class BookCreateList(
         return bookList
     }
 
-    fun removeBook(id: Int){
-        bookList.remove(id)
+    fun removeBook(id: Int): DataBook?{
+        return bookList.remove(id)
     }
 
     fun getBook(id: Int): DataBook? {

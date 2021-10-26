@@ -21,8 +21,8 @@ class LoginServlet: HttpServlet() {
 
     @Throws(ServletException::class, IOException::class)
     override fun doPost(request: HttpServletRequest?, response: HttpServletResponse?) {
-        if (username == request?.getParameter("username") && password == request?.getParameter("password")) {
-            val cookie = Cookie("auth", Instant.now().toString())
+        if (username == request?.getParameter("username") && password == request.getParameter("password")) {
+            val cookie = Cookie("auth", Instant.now().toEpochMilli().toString())
             response!!.addCookie(cookie)
             response.sendRedirect("home.html")
         }

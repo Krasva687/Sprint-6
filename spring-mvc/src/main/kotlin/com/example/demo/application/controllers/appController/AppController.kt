@@ -41,8 +41,8 @@ class AppController {
     }
 
     @GetMapping("/getAll")
-    fun getAllContact(@RequestParam query: Map<String, String>, model: Model): String {
-        val searchResult = bookService.getListBooks()
+    fun getAllContact(@RequestParam list: Map<String, String>, model: Model): String {
+        val searchResult = bookService.getListBooks(list)
 
         model.addAttribute("res", searchResult)
         model.addAttribute("list", "Вот что нашлось:")
